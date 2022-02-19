@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="Description" content="Enter your description here"/>
+
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,15 +16,38 @@
 <title>Tables Tutor</title>
 </head>
 <body>
-    <h1></h1>
-    <div>form</div>
+    <h1>Tables Tutor</h1>
+    <div class="form-details">
+            <form method="POST" action= "#" class="signup-form">
+                <h2>Let's get you and a grown-up signed up!<i class="fa-solid fa-pen-to-square"></i></h2>
+                <label for="name">Your name:</label>
+                <input id="name" class="text-input" name="child_name" type="text" required>
+                
+                                
+                <label for="email"> Parent/Guardian Email Address:</label>
+                <input type="email" id="email" class="text-input" name="parent_email_address" required>
+                <input type="checkbox" id="permission" name="permission" value="permission">
+                <label for="permission">I give permission for my child to take the tables test and earn a certificate</label>
+                <br>
+                <input class="begin-button" type="submit" value="Let's begin!">
+                
+    </div>
     <div> How to play</div>
-    <div> number sentence</div>
+    <div class = "test-area">
+        <span id = operand1>0</span>
+        <span id ="operator">+</span>
+        <span id="tableoperand">1</span>
+        <span>=</span>
+        <p class ="answer-prompt"> Enter Answer:</p>
+        <input id ="answer-box" type = "number">
+        <button data-type="submit" class = "btn btn--gray"> Submit Answer</button>
+    </div>
     <div>timer</div>
     <div> print button</div>
     <footer> bonus challenge?? timer?? </footer>
 
-
+<!--font awesome icons used in theis website-->
+<script src="https://kit.fontawesome.com/991babbcdf.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
