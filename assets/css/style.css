@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Patrick+Hand&display=swap');
-body{ background-color: #04AA6D;}
+body{ background-color:#58EB24;
+color:#9E008B;
+font-family:"montserrat" ;
+text-align: center;
+}
 
 .vertical-menu {
     width: 200px;
