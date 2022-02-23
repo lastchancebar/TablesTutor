@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="Description" content="Enter your description here" />
-
+    <script type="text/javascript" src="assets/js/script.js"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -14,12 +14,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="script.js"></script>
+   
     <title>Table Tutor</title>
 </head>
 
 <body>
     <h1>Tables Tutor</h1>
+
+    <input type = "button" onclick = "myfunction()" value = "Display"> 
     
     
             <h2>Let's begin<i class="fas fa-keyboard"></i></h2>
@@ -41,28 +43,27 @@
         </ol>
     </div>
     <div class="learn-area">
-        <h2>Which table do you want to learn?</h2>
-        <label for="addition"><i class="fas fa-plus"></i></label>
-    <select id="age" name="age">
-        <option class="plusOne" value="1">1</option>
-        <option class="plusTwo" value="2">2</option>
-        <option class="plusThree" value="3">3</option>
-        <option class="plusFour" value="4">4</option>
-        <option class="plusFive" value="5">5</option>
-        <option class="plusSix" value="6">6</option>
-        <option class="plusSeven" value="7">7</option>
-        <option class="plusEight" value="8">8</option>
-        <option class="plusNine" value="9">9</option>
-        <option class="plusEight" value="10">10</option>
-    </select>
+        <h2>Which  <i class="fas fa-plus"></i> table do you want to learn?</h2>
+        
+    
+        <input type = "button" onclick = "plusOne()" value = "+ 1">
+        <input type = "button" onclick = "plusTwo()" value = "+ 2">
+        <input type = "button" onclick = "plusThree()" value=" + 3">
+        <input type = "button" onclick = "plusFour()" value = "+ 4">
+        <input type = "button" onclick = "plusFive()" value = "+ 5">
+        <input type = "button" onclick = "plusSix()" value=" + 6">
+        <input type = "button" onclick = "plusSeven()" value = "+ 7">
+        <input type = "button" onclick = "plusEight()" value = "+ 8">
+        <input type = "button" onclick = "plusNine()" value=" + 9">
+        <input type = "button" onclick = "plusTen()" value = "+ 10">
 
 
-        <input class="learn-button" type="submit" value="Let's learn!">
+        
         </div>
         <div >
             <h2>Test yourself!</h2>
             <div class="test-area">
-            <span id=tableoperand>0</span>
+            <span id=tableOperand>0</span>
             <span id="operator">+</span>
             <span id="operand1">1</span>
             <span>=</span>
@@ -75,7 +76,7 @@
         <div class="reward-area">
             <h2> Congratulations!</h2>
             <p> You know your <i class="fas fa-plus"></i><span id="tableoperand"></span> tables!</p>
-            <p>Get your certificate to show the world!</p>
+            <button onclick='getCert()'>Get your Certificate</button>
             <button data-type="submit" class="btn btn--gray">Print your Certificate!</button>
         </div>
         <footer> bonus challenge?? timer?? </footer>
