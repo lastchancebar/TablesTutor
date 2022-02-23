@@ -30,7 +30,7 @@ function runGame(gameType) {
 
     //creates 2 random numbers between 0 and 9;
     let num1 = Math.floor(Math.random() * 10) + 1; 
-    
+    let num2 = Math.floor(Math.random() * 10) + 1; 
 
 if (gameType === "addition") {
     displayAdditionQuestion(num1, num2);
@@ -38,16 +38,16 @@ if (gameType === "addition") {
 }
 
     
-     gets the operands-numberes and operator +- etc from the dom and calculates the correct answer
+    /* gets the operands-numberes and operator +- etc from the dom and calculates the correct answer*/
      
     
     function calculateCorrectAnswer() {
         let operand1 = parseInt(document.getElementById('operand1').innerText);
-        let tableOperand = parseInt(document.getElementById('tableOperand').innerText);
+        let operand2 = parseInt(document.getElementById('operand2').innerText);
         let operator = document.getElementById("operator").innerText;
         
         if (operator === "+"){
-            return [tableOperand + operand1, "addition"];
+            return [operand2 + operand1, "addition"];
         /*} else if (operator === "x"){
                 return [operand1 * operand2, "multiply"];
             } else if (operator === "-"){
@@ -57,8 +57,8 @@ if (gameType === "addition") {
             throw `Unimplemented operator ${operator}. Aborting!`;
         }
     }
-    function displayAdditionQuestion(operand1, tableOperand) {
+    function displayAdditionQuestion(operand1, operand2) {
         document.getElementById('operand1').textContent = operand1;
-        document.getElementById('tableOperand').textContent = operand2;
+        document.getElementById('operand2').textContent = operand2;
         document.getElementById('operator').textContent = "+";
     }
