@@ -44,9 +44,26 @@
     </div>
     <div class="learn-area">
         <h2>Which  <i class="fas fa-plus"></i> table do you want to learn?</h2>
-        
+        <table id="addTables">
+<tr>
+    <td>
+        <label for="tableNumber">Enter Table Number:</label>
+        <input type="text" id="tableNumber" placeholder="table number" value="4"/>
+    </td>
+</tr> 
+<tr>
+    <td>
+        <button onClick='getTable()' onMouseOver="this.style.color='red'" onMouseOut="this.style.color='black'">Learn this table</button> </td>
+</tr> 
+<tr>
+<td colspan="2"><ol id="playGround" style='height:580px;'></ol>
+  
+</td>
+</tr>
+</table>
+        </table>     
     
-        <input type = "button" onclick = "plusOne()" value = "+ 1">
+       <!--<input type = "button" onclick = "plusOne()" value = "+ 1">
         <input type = "button" onclick = "plusTwo()" value = "+ 2">
         <input type = "button" onclick = "plusThree()" value=" + 3">
         <input type = "button" onclick = "plusFour()" value = "+ 4">
@@ -55,7 +72,7 @@
         <input type = "button" onclick = "plusSeven()" value = "+ 7">
         <input type = "button" onclick = "plusEight()" value = "+ 8">
         <input type = "button" onclick = "plusNine()" value=" + 9">
-        <input type = "button" onclick = "plusTen()" value = "+ 10">
+        <input type = "button" onclick = "plusTen()" value = "+ 10">-->
 
 
         
@@ -63,7 +80,7 @@
         <div >
             <h2>Test yourself!</h2>
             <div class="test-area">
-            <span id=tableOperand>0</span>
+            <span id=tableNumber>0</span>
             <span id="operator">+</span>
             <span id="operand1">1</span>
             <span>=</span>
@@ -72,7 +89,10 @@
             <input id="answer-box" type="number">
             <button data-type="submit" class="btn btn--gray"> Submit Answer</button>
         </div>
-        <div>timer</div>
+        <div class="score-area">
+            <p class ="scores">Correct Answers <span id="score">0</span></p>
+            <p class ="scores">Incorrect Answers <span id="incorrect">0</p>
+            </div>
         <div class="reward-area">
             <h2> Congratulations!</h2>
             <p> You know your <i class="fas fa-plus"></i><span id="tableoperand"></span> tables!</p>
