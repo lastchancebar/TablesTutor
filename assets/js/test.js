@@ -3,13 +3,16 @@ function myfunction()
 document.write("welcome to Javatpoint");  
  }
  function getCert(){
-            
+    
     document.write('<h2>Certificate</h2>');
      
-     document.write('<h3>certName.innerHTML</h3>');
+     document.write('<h3>you</h3>');
      document.write('<p>has passed the Table Tutor test in</p>');
-     document.write( '<p> + [tableoperand] tables.</p>');
+     document.write( '<p> + tables.</p>');
      document.write('Congratulations!');
+    
+     document.write('Date');
+    
    }
 
    const colors = [ '#ff0000', 'White', '#ff007f', '#7627ff', '#ffff00', '#000'];
@@ -72,70 +75,98 @@ function runGame(gameType) {
     document.getElementById("answer-box").focus();
 
     
-    let num1 = tableNumber;
-    let num2 = Math.floor(Math.random() * 10);
+    let num1 = parseInt(document.getElementById('tableNumber').value);
+    let num2 = Math.floor(Math.random() * 12);
 
 if (gameType === "addition") {
     displayAdditionQuestion(num1, num2);
-}else{
-  alert(`Unknown game type:${gameType}`);
-throw`Unknown game type:${gameType}. Aborting!`;/* does this need to be in?*/
-}
-}
-function checkAnswer(){
-  let userAnswer= parseInt(document.getElementById('answer-box').value);
-  let calculatedAnswer= calculateCorrectAnswer();
-  let isCorrect = userAnswer === calculatedAnswer[0];
+    
 
-  if (isCorrect){if (isCorrect) {
-    alert("Hey! You got it right!:D");
-    incrementScore();
-
-}else{
-    alert(`Awww.... you answered ${userAnswer}. The correct answer is ${calculatedAnswer[0]}!`);
-    incrementWrongAnswer();
+}else {
+    alert(`Unknown game type: ${gameType}`);
+    throw `Unknown game type: ${gameType}. Aborting!`;
 }
-runGame(calculatedAnswer[1]);
+}
+/*
+* compares the user input to the first element in the calculateCorrectAmswer array  */
+function checkAnswer() {
+    let userAnswer = parseInt(document.getElementById("answer-box").value);
+    let calculatedAnswer = calculateCorrectAnswer();
+    let isCorrect = userAnswer === calculatedAnswer[0];
+
+    if (isCorrect) {
+        alert("Hey! You got it right!:D");
+        incrementScore();
+        move();
+
+    }else{
+        alert(`Awww.... you answered ${userAnswer}. The correct answer is ${calculatedAnswer[0]}!`);
+        incrementWrongAnswer();
+    }
+    runGame(calculatedAnswer[1]);
 }
 /**
-* *gets the operands-numberes and operator +- etc from th dom and calculates the correct answer
-*/
+ * *gets the operands-numberes and operator +- etc from th dom and calculates the correct answer
+ */
 
 function calculateCorrectAnswer() {
-let operand1 = parseInt(document.getElementById('operand1').innerText);
-let tableNumber = parseInt(document.getElementById('tableNumber').innerText);
-let operator = document.getElementById("operator").innerText;
-
-if (operator === "+"){
-    return [operand1 + tableNumber, "addition"];
-}else {
-    alert(`Unimplemented operator ${operator}`);
-    throw `Unimplemented operator ${operator}. Aborting!`;
-}
-
-
-}
-/**
-* gets the current score from th dom and increasses it by 1
-*/
-function incrementScore() {
-let oldScore = parseInt(document.getElementById("score").innerText);
-document.getElementById("score").innerText = ++oldScore;
-}
-/**
-* gets the current incorrects from th dom and increasses it by 1
-*/
-function incrementWrongAnswer() {
-let oldScore = parseInt(document.getElementById("incorrect").innerText);
-document.getElementById("incorrect").innerText = ++oldScore;
-
-}
-
-function displayAdditionQuestion(operand1, tableNumber) {
-document.getElementById('operand1').textContent = operand1;
-document.getElementById('tableNumber').textContent = tableNumber;
-document.getElementById('operator').textContent = "+";
-}
-
+    let operand1 = parseInt(document.getElementById('operand1').innerText);
+    let operand2 = parseInt(document.getElementById('operand2').innerText);
+    let operator = document.getElementById("operator").innerText;
     
-  }
+    if (operator === "+"){
+        return [operand1 + operand2, "addition"];
+     
+    }else {
+        alert(`Unimplemented operator ${operator}`);
+        throw `Unimplemented operator ${operator}. Aborting!`;
+    }
+   
+   
+}
+/**
+ * gets the current score from th dom and increasses it by 1
+ */
+function incrementScore() {
+    let oldScore = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = ++oldScore;
+}
+
+var i =0;
+function move(){
+    if (i==0){ 
+        i =1;
+        var elem = document.getElementById("myBar");
+        var width = 1;
+        var id= setInterval(frame,10);
+        function frame(){
+            if (width >= 100){
+            clearInterval(id);
+            i=0;
+        }else{
+            width++;
+            elem.style.width= width +"%";
+        }
+        }
+    }
+}
+/**
+ * gets the current incorrects from th dom and increasses it by 1
+ */
+function incrementWrongAnswer() {
+    let oldScore = parseInt(document.getElementById("incorrect").innerText);
+    document.getElementById("incorrect").innerText = ++oldScore;
+
+}
+
+function displayAdditionQuestion(operand1, operand2) {
+  
+    document.getElementById('operand1').textContent = operand1;
+    document.getElementById('operand2').textContent = operand2;
+    document.getElementById('operator').textContent = "+";
+}
+
+
+
+
+

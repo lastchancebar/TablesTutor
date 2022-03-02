@@ -9,5 +9,15 @@ text-align: center;
 
 .test-area span {
   font-size:300%;
+}
+#myProgress{
+    width: 100%;
+    background-color: black;
+  }
+#myBar{
+    width:1%;
+    height:30px;
+    background-color: #9E008B;
+  }
   
 }
