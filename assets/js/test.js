@@ -2,7 +2,7 @@ function myfunction()
  {   
 document.write("welcome to Javatpoint");  
  }
- function getCert(){
+ /*function getCert(){
     
     document.write('<h2>Certificate</h2>');
      
@@ -13,9 +13,9 @@ document.write("welcome to Javatpoint");
     
      document.write('Date');
     
-   }
+   }*/
 
-   const colors = [ '#ff0000', 'White', '#ff007f', '#7627ff', '#ffff00', '#000'];
+   const colors = [ '#ff0000', 'White', '#b35900', '#7627ff', '#ffff00', '#000','#0000ff','#990000','#001a00','#333399'];
    
    function getTable(){
      document.getElementById('playGround').innerHTML='';
@@ -43,20 +43,20 @@ document.write("welcome to Javatpoint");
      document.getElementById('playGround').appendChild(type);
 
    }
-   document.addEventListener("DOMContentLoaded", function () {
-    let buttons = document.getElementsByTagName("button");
-    for (let button of buttons) {
-        button.addEventListener('click', function () {
-                if (this.getAttribute("data-type") === "submit") {
-                    checkAnswer();
-                } else {
-                    let gameType = this.getAttribute("data-type");
-                    runGame(gameType);
-                }
-            
-            })
-            
-    }
+   document.addEventListener("DOMContentLoaded", function() {
+	let buttons = document.getElementsByTagName("button");
+
+	for (let button of buttons) {
+		button.addEventListener("click", function() {
+			if (this.getAttribute("data-type") === "submit") {
+				checkAnswer();
+			} else {
+				let gameType = this.getAttribute("data-type");
+				runGame(gameType);
+			}
+		});
+	}
+   
     document.getElementById("answer-box").addEventListener("keydown", function(event)
 { if (event.key ==="Enter"){
     checkAnswer();
@@ -64,6 +64,7 @@ document.write("welcome to Javatpoint");
 
 })
         runGame("addition");
+        
   })
   
 /** 
@@ -78,15 +79,13 @@ function runGame(gameType) {
     let num1 = parseInt(document.getElementById('tableNumber').value);
     let num2 = Math.floor(Math.random() * 12);
 
+} 
+
 if (gameType === "addition") {
     displayAdditionQuestion(num1, num2);
-    
+}   
 
-}else {
-    alert(`Unknown game type: ${gameType}`);
-    throw `Unknown game type: ${gameType}. Aborting!`;
-}
-}
+
 /*
 * compares the user input to the first element in the calculateCorrectAmswer array  */
 function checkAnswer() {

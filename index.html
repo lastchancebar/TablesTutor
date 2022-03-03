@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
    
-    <title>Table Tutor</title>
+    <title>Tables Tutor</title>
 </head>
 
 <body>
@@ -24,9 +24,9 @@
     <input type = "button" onclick = "myfunction()" value = "Display"> 
     
     
-            <h2>Let's begin<i class="fas fa-keyboard"></i></h2>
+           <!-- <h2>Let's begin<i class="fas fa-keyboard"></i></h2>
             <label for="name">Your name:</label>
-            <input id="name" class="text-input" name="name" type="text" required>
+            <input id="name" class="text-input" name="name" type="text" required>-->
 
 
             
@@ -34,26 +34,18 @@
 
     
     <div>
-        <h2> How to play</h2>
-        <ol class="instructions">
-            <li> Type in your name.</li>
-            <li>Choose the maths table you need to practice and learn it.</li>
-            <li>Take the table test.</li>
-            <li>When you have your all your table correct, print out your certificate!</li>
-        </ol>
+        
+        <h2> Learn your table - then take the test!</h2>
     </div>
     <div class="learn-area">
-        <h2>Which  <i class="fas fa-plus"></i> table do you want to learn?</h2>
         <table id="addTables">
-<tr>
-    <td>
-        <label for="tableNumber">Enter Table Number:</label>
+            <tr>
+        <td>
+        
+        <label for="tableNumber"><h3>Choose a  <i class="fas fa-plus"></i> table.</h3></label>
         <input type="text" id="tableNumber" placeholder="table number" value="4"/>
-    </td>
-</tr> 
-<tr>
-    <td>
-        <button onClick='getTable()' onMouseOver="this.style.color='red'" onMouseOut="this.style.color='black'">Learn this table</button> </td>
+    
+        <button onClick='getTable()' onMouseOver="this.style.color='red'" onMouseOut="this.style.color='black'">Let's get learning!</button> </td>
 </tr> 
 <tr>
 <td colspan="2"><ol id="playGround" style='height:580px;'></ol>
@@ -63,10 +55,7 @@
 </table>
         </table>     
     
-       
-
-
-        
+           
         </div>
         <div class="game-area">
             <div class="controls-area">
@@ -94,12 +83,12 @@
           </div>
           <p class ="scores">Incorrect Answers <span id="incorrect">0</p>
           </div>
-           <div class="reward-area">
+          <!-- <div class="reward-area">
             <h2> Congratulations!</h2>
             <p> You know your <i class="fas fa-plus"></i><span id="tableNumber"></span> tables!</p>
             <input type="button" onclick="getCert()" value="Get your Certificate">
             <button data-type="submit" class="btn btn--gray">Print your Certificate!</button>
-        </div>
+        </div>-->
         <footer> bonus challenge?? timer?? </footer>
 
         <!--font awesome icons used in theis website-->
