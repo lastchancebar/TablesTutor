@@ -79,12 +79,12 @@ function runGame(gameType) {
     let num1 = parseInt(document.getElementById('tableNumber').value);
     let num2 = Math.floor(Math.random() * 12);
 
-} 
+
 
 if (gameType === "addition") {
     displayAdditionQuestion(num1, num2);
 }   
-
+}
 
 /*
 * compares the user input to the first element in the calculateCorrectAmswer array  */
@@ -131,6 +131,8 @@ function incrementScore() {
     document.getElementById("score").innerText = ++oldScore;
 }
 
+
+/*progress bar*/
 var i =0;
 function move(){
     if (i==0){ 
